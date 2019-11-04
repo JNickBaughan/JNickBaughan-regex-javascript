@@ -67,9 +67,9 @@ test("isOneLowerCaseChar - text: 'aabbcc'", () => {
   expect(actual).toEqual(expected);
 });
 
-test("isOneLowerCaseChar - text: 'aabbcc'", () => {
+test("isOneLowerCaseChar - text: 'as'", () => {
   const text = "as";
-  const expected = true;
+  const expected = false;
   const actual = isOneLowerCaseChar(text);
   expect(actual).toEqual(expected);
 });
