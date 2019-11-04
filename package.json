@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "scripts": {
+    "test-anchor": "yarn jest regex/1_anchor",
+    "test-range": "yarn jest regex/2_range"
+  }
+}
