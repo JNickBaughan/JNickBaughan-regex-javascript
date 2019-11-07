@@ -1,7 +1,9 @@
 const {
   includesAtLeastOnelowerCaseChar,
   includesOnlyLowerCaseChars,
-  isOneLowerCaseChar
+  isOneLowerCaseChar,
+  lowerCaseInMiddle,
+  isAllLowerCaseAndDigits
   // onlyLowerCase,
   // lowerCaseInMiddle,
   // lowerCasesInMiddle,
@@ -10,6 +12,34 @@ const {
   // noDigits,
   // noDigitsThroughout
 } = require("./index");
+
+test("isAllLowerCaseAndDigits - text '1abc23'", () => {
+  const text = "1abc23";
+  const expected = true;
+  const actual = isAllLowerCaseAndDigits(text);
+  expect(actual).toEqual(expected);
+});
+
+test("isAllLowerCaseAndDigits - text '1aBc23'", () => {
+  const text = "1aBc23";
+  const expected = false;
+  const actual = isAllLowerCaseAndDigits(text);
+  expect(actual).toEqual(expected);
+});
+
+test("lowerCaseInMiddle - text 'helloaaaworld'", () => {
+  const text = "helloaaaworld";
+  const expected = true;
+  const actual = lowerCaseInMiddle(text);
+  expect(actual).toEqual(expected);
+});
+
+test("lowerCaseInMiddle - text 'helloaworld'", () => {
+  const text = "helloaworld";
+  const expected = true;
+  const actual = lowerCaseInMiddle(text);
+  expect(actual).toEqual(expected);
+});
 
 test("includesAtLeastOnelowerCaseChar - text: 'a'", () => {
   const text = "a";
@@ -55,7 +85,14 @@ test("includesOnlyLowerCaseChars - text: 'AaBbCc'", () => {
 
 test("includesOnlyLowerCaseChars - text: 'aabbcc'", () => {
   const text = "aabbcc";
-  const expected = false;
+  const expected = true;
+  const actual = includesOnlyLowerCaseChars(text);
+  expect(actual).toEqual(expected);
+});
+
+test("includesOnlyLowerCaseChars - text: 'a'", () => {
+  const text = "a";
+  const expected = true;
   const actual = includesOnlyLowerCaseChars(text);
   expect(actual).toEqual(expected);
 });

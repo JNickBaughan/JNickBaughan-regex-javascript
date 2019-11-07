@@ -3,68 +3,57 @@
 
 //string includes a lowercase letter
 function includesAtLeastOnelowerCaseChar(text) {
-  const regEx = //;
+  const regEx = /[a-z]/;
   return regEx.test(text);
 }
 
 //string includes only lowercase letters
 function includesOnlyLowerCaseChars(text) {
-  const regEx = //;
+  const regEx = /^[a-z]+$/;
   return regEx.test(text);
 }
 
 //string is only ONE single lowercase Char
 function isOneLowerCaseChar(text) {
-  const regEx = //;
-  return regEx.test(text);
-}
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//string includes only lowercase letters
-function onlyLowerCase(text) {
   const regEx = /^[a-z]$/;
   return regEx.test(text);
 }
 
-//string includes ONLY a single lowercase letter
-function lowerCaseSingle(text) {
-  const regEx = /^[a-z]$/;
-  return regEx.test(text);
-}
-
-//string includes a lowercase letter between 'hello' and 'world'
+//string includes any number of lowercase letters between 'hello' and 'world'
 function lowerCaseInMiddle(text) {
-  const regEx = /hello[a-z]world/;
-  return regEx.test(text);
-}
-
-//string includes one or more lowercase letters between 'hello' and 'world'
-function lowerCasesInMiddle(text) {
   const regEx = /hello[a-z]+world/;
   return regEx.test(text);
 }
 
 //string includes all lowercase letters and digits, but no uppercase
-function lowerCaseOrDigit(text) {
+function isAllLowerCaseAndDigits(text) {
   const regEx = /^[^A-Z][a-z0-9]+$/;
+  return regEx.test(text);
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+//string includes one or more lowercase letters between 'hello' and 'world'
+function lowerCasesInMiddle(text) {
+  const regEx = /hello[a-z]+world/;
   return regEx.test(text);
 }
 
@@ -85,7 +74,9 @@ function noDigitsThroughout(text) {
 module.exports = {
   includesAtLeastOnelowerCaseChar,
   includesOnlyLowerCaseChars,
-  isOneLowerCaseChar
+  isOneLowerCaseChar,
+  lowerCaseInMiddle,
+  isAllLowerCaseAndDigits
   //   onlyLowerCase,
   //   lowerCaseInMiddle,
   //   lowerCasesInMiddle,
